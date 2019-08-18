@@ -92,7 +92,7 @@ abstract class Message {
     // instead of identifiers, or in the wrong order, missing values, etc.
     ListLiteral identifiers = args.childEntities.last;
     if (!identifiers.elements.every((each) => each is SimpleIdentifier)) {
-      return false;
+//      return false;
     }
     var names = identifiers.elements
         .map((each) => (each as SimpleIdentifier).name)
