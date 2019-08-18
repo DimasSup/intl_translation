@@ -80,11 +80,11 @@ class MessageGeneration {
     // original message (e.g. if we're using some messages from a larger
     // catalog)
     var usableTranslations = translations
-//        .where((each) => each.originalMessages != null && each.message != null)
+        .where((each) => each.originalMessages != null )
         .toList();
     for (var each in usableTranslations) {
       for (var original in each.originalMessages) {
-        original.addTranslation(locale, each.message);
+        original.addTranslation(locale, each.message ?? original.id);
       }
     }
     usableTranslations.sort((a, b) =>
